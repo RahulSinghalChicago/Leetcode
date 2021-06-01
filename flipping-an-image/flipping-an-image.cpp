@@ -35,16 +35,18 @@ public:
     vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
         int n = image.size();
         
-        for (int row = 0; row < n; row++)
+        for (int row = 0; row < n; row++) {
             for (int i = 0, j = n-1; i <= j; i++, j--) {
-                if (i == j) {               
-                    cout << i << " " << j << endl;
-                    image[row][i] = image[row][i] ? 0 : 1;
-                } else if (image[row][i] == image[row][j]) {
-                    image[row][i] = image[row][i] ? 0 : 1;
-                    image[row][j] = image[row][j] ? 0 : 1;   
+                if (i == j)             
+                    image[row][i] ^= 1;
+                else if (image[row][i] == image[row][j]) {
+                    image[row][i] ^= 1;
+                    image[row][j] ^= 1;
                 }
             }
+            
+
+        } 
         
         return image;
     }
