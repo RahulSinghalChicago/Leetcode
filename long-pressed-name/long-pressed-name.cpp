@@ -46,12 +46,14 @@ public:
     bool isLongPressedName(string name, string typed) {
         int j = 0;
         int i = 0;
+        int len_name = name.length();
+        int len_typed = typed.length();
         
-        if (name.length() > typed.length())
+        if (len_name > len_typed)
             return false;
         
-        while (i < name.length() || j < typed.length()) {
-            if (i < name.length() && j < typed.length() && name[i] == typed[j]) {
+        while (i < len_name || j < len_typed) {
+            if (name[i] == typed[j]) {
                 j++;
                 i++;
                 continue;
@@ -64,7 +66,7 @@ public:
                 return false;
         }
         
-        if (j < typed.length())
+        if (j < len_typed)
             return false;
         
         return true;   
