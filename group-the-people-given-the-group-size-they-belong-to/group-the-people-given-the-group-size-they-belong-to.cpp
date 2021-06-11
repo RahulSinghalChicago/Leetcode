@@ -43,7 +43,7 @@ pcode:
 
 - loop through groupSizes by i
 - hash_map[groupSizes[i]].push(i)
-- if groupSizes[i] = map[groupsizes[i]] then that's a complete group
+- if groupSizes[i] = map[groupsizes[i]] // then that's a complete group
 -    add to result
 -    reset group
 
@@ -59,7 +59,6 @@ public:
         
         
         for(int i = 0; i < groupSizes.size(); i++) {
-            cout << groupSizes[i] << endl;
             hash[groupSizes[i]].push_back(i);
             
             if (hash[groupSizes[i]].size() == groupSizes[i]) {
